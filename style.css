@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 *{
     margin:0;
     padding:0;
@@ -16,10 +17,23 @@
     --active: hsl(240,1%,14%);
     --divider: hsl(0,0%,87%);
 }
+button{
+    font-family: inherit;
+    cursor:pointer;
+    background: var(--primary-light);
+    border: none;
+    transition: 0.5s ease;
+}
+button:hover{
+    background: var(--primary);
+    color:#fff;
+}
 body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Montserrat', 'sans-serif';
+    padding-block: 2rem;
     min-height: 100vh;
 }
 .dashboard{
@@ -54,5 +68,59 @@ body{
     
 }
 .list-container{
-    
+    padding-right: 0.4rem;
+}
+.list-container li{
+  padding-left: 1rem;
+  padding-block: 0.7rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+  color: var(--secondary);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.list-container li ion-icon{
+    color: var(--primary);
+}
+.list-container li:hover{
+    background: var(--primary-light);
+}
+.list-container li.active{
+    color: #000;
+    background: #fff;
+    font-weight: bold;
+    position: relative;
+}
+.list-container li.active::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width:0.25rem;
+background: var(--primary);
+border-radius: 0.4rem;
+}
+.support{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:1rem;
+    padding-inline: 1rem;
+}
+.support p{
+    color: var(--secondary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+.support button{
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
